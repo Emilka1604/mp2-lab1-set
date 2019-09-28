@@ -1,4 +1,4 @@
-﻿# Методы программирования 2: Множества на основе битовых полей БИТОВЫЕ ПОЛЯ ОДИН ДВА
+﻿# Методы программирования 2: Множества на основе битовых полей БИТОВЫЕ ПОЛЯ ОДИН ДВА ТРИ
 
 [![Build Status](https://travis-ci.org/UNN-VMK-Software/mp2-lab1-set.svg)][travis]
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)][gitter]
