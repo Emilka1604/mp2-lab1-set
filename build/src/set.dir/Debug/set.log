@@ -1,0 +1,6 @@
+﻿  Building Custom Rule C:/Users/shari/Documents/GitHub/mp2-lab1-set/src/CMakeLists.txt
+  tbitfield.cpp
+  tset.cpp
+  Создание кода...
+C:\Users\shari\Documents\GitHub\mp2-lab1-set\src\tbitfield.cpp(196,27): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  set.vcxproj -> C:\Users\shari\Documents\GitHub\mp2-lab1-set\build\lib\Debug\set.lib
