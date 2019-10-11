@@ -7,12 +7,16 @@
 
 #include "tset.h"
 
+
 TSet::TSet(int mp) : BitField(mp),  MaxPower(mp)
+
 {
 }
 
 // конструктор копирования
+
 TSet::TSet(const TSet &s) : BitField(s.BitField), MaxPower(s.MaxPower)
+
 {
 }
 
@@ -34,9 +38,10 @@ int TSet::GetMaxPower(void) const // получить макс. к-во эл-т�
 
 int TSet::IsMember(const int Elem) const // элемент множества?
 {
-	return BitField.GetBit(Elem);
-}
 
+	return BitField.GetBit(Elem);
+
+}
 void TSet::InsElem(const int Elem) // включение элемента множества
 {
 	BitField.SetBit(Elem);
@@ -54,23 +59,31 @@ TSet& TSet::operator=(const TSet &s) // присваивание
 	BitField = s.BitField;
 	MaxPower = s.MaxPower;
 	return *this;
+
+
 }
 
 int TSet::operator==(const TSet &s) const // сравнение
 {
+
 	int temp = 1;
 	if ((MaxPower != s.MaxPower) || (BitField != s.BitField) )
 		temp = 0;
 	return temp;
 
+
+    return BitField ==s.BitField;
+
 }
 
 int TSet::operator!=(const TSet &s) const // сравнение
 {
+
 	int temp = 0;
 	if ((MaxPower != s.MaxPower) || (BitField != s.BitField))
 		temp = 1;
 	return temp;
+
 
 }
 
@@ -82,34 +95,45 @@ TSet TSet::operator+(const TSet &s) // объединение
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
+
 	TSet tmp(*this);
 	tmp.InsElem(Elem);
 	return tmp;
+
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
 {
+
 	TSet tmp(*this);
 	tmp.DelElem(Elem);
 	return tmp;
+
 }
 
 TSet TSet::operator*(const TSet &s) // пересечение
 {
 	TSet temp(BitField & s.BitField);
+
 	return temp;
+
+
 }
 
 TSet TSet::operator~(void) // дополнение
 {
+
 	TSet temp(~BitField);
 	return temp;
+
+
 }
 
 // перегрузка ввода/вывода
 
 istream &operator>>(istream &istr, TSet &s) // ввод
 {
+
 	int a;
 	for (int i = 0; i < s.GetMaxPower(); i++) {
 		istr >> a;
@@ -118,12 +142,21 @@ istream &operator>>(istream &istr, TSet &s) // ввод
 		else
 			s.DelElem(i);
 	}
+
+	istr >> s.BitField;
+	istr >> s.MaxPower;
+
 	return istr;
 }
 
 ostream& operator<<(ostream &ostr, const TSet &s) // вывод
 {
+
 	for (int i = 0; i < s.GetMaxPower(); i++)
 		ostr << s.IsMember(i);
+
+	ostr << s.BitField;
+	ostr << s.MaxPower;
+
 	return ostr;
 }
